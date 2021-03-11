@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/cf19d709d84dbc31fa36/maintainability)](https://codeclimate.com/github/lexlex47/MadEvents/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5c9517f799734534a5967c939b98923f)](https://www.codacy.com/gh/lexlex47/MadEvents/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lexlex47/MadEvents&amp;utm_campaign=Badge_Grade)
 
 # MadEvents
 
