@@ -23,7 +23,7 @@ Build a CLI program that meets the above requirements and will accept the follow
 - CREATE TALK event_name talk_name talk_start_time talk_end_time speaker_name 
 - PRINT TALKS event_name => output the talks for an event sorted by the start time
 
-### Dependencies
+## Dependencies
 
     Ruby => 2.7.2p137 (2020-10-01 revision 5445e04352) [x64-mingw32]
     Bundler => 2.1.4
