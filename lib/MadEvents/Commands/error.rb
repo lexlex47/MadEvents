@@ -1,16 +1,16 @@
 require_relative "command"
 
 module Commands
-  class Create_speaker < Command
+  class Error < Command
 
     def process
-      @event_controller.create_speaker(args[0])
+      puts "Wrong Command, Please try again"
     end
 
     private
 
     def is_valid?
-      args.length == 1 ? true : false
+      true
     end
 
   end

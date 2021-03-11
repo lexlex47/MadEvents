@@ -15,12 +15,16 @@ class Command_Controller
   end
 
   def command_create
-    command_name = input_valid ? Object.const_get("Commands::#{command_arg.capitalize}") : Commands::Error
-    command_name.new(command_data, @event_controller)
+    @command_name = input_valid ? Object.const_get("Commands::#{command_arg.capitalize}") : Commands::Error
+    @command_name.new(command_data, @event_controller)
   end
 
   def is_print_command
-    Object.const_get("Commands::#{command_arg.capitalize}") == Commands::Print_talks
+    @command_name == Commands::Print_talks
+  end
+
+  def is_error_command
+    @command_name == Commands::Error
   end
 
   def exit

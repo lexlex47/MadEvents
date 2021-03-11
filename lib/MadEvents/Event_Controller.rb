@@ -40,13 +40,14 @@ class Event_Controller
   end
 
   def print_talks(event_name)
-    # puts "here"
     event = select_event(event_name)
     contents = []
+    contents << " "
     event.talks.sort_by(&:start_time).each do |talk|
       contents << "#{talk.start_time} - #{talk.end_time}"
       contents << "#{talk.topic} presented by #{talk.speaker.name}"
     end
+    contents << " "
     contents
   end
 
