@@ -73,7 +73,7 @@ class Event_Controller
   def find_event(event_name, start_time, end_time)
     event = select_event(event_name)
     return false if event.nil?
-    find_conflict(event, start_time, end_time)
+    find_conflict(event, start_time, end_time) || !wrong_time(start_time, end_time)
   end
 
   def find_conflict(event, start_time, end_time)
@@ -82,6 +82,10 @@ class Event_Controller
       return false if (talk.start_time..talk.end_time).cover?(start_time) || (talk.start_time..talk.end_time).cover?(end_time)
     end
     return true
+  end
+  
+  def wrong_time(start_time, end_time)
+    start_time >= end_time ? true : false
   end
 
 end
