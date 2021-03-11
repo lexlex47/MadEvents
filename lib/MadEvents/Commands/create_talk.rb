@@ -11,8 +11,9 @@ module Commands
     private
 
     def is_valid?
-      true
+      return false if args.length < 5
       process_args
+      @event_controller.talks_valid?(@event_name, @speaker, @start_time, @end_time)
     end
 
     def process_args

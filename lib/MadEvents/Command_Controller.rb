@@ -19,6 +19,10 @@ class Command_Controller
     command_name.new(command_data, @event_controller)
   end
 
+  def is_print_command
+    Object.const_get("Commands::#{command_arg.capitalize}") == Commands::Print_talks
+  end
+
   def exit
     @inputs.include?("Q")
   end

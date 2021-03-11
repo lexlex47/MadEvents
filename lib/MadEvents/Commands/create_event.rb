@@ -10,7 +10,7 @@ module Commands
     private
 
     def is_valid?
-      args.length == 1 ? true : false
+      args.length == 1 && @event_controller.event_valid?(args[0])
     end
 
   end

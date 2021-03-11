@@ -19,7 +19,14 @@ class Processor
       input = cli.input
       command = Command_Controller.new(input, @event_controller)
       break if command.exit
-      command.command_create
+      result = command.command_create
+      process_output(result.process) if command.is_print_command
+    end
+  end
+
+  def process_output(contents)
+    contents.each do |c|
+      cli.output(c)
     end
   end
 
