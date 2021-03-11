@@ -17,7 +17,7 @@ class Processor
   def process
     while 
       input = cli.input
-      command = Command_Controller.new(input, event_controller)
+      command = Command_Controller.new(input, @event_controller)
       break if command.exit
       command.command_create
     end

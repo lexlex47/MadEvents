@@ -1,3 +1,5 @@
+require_relative "Talk"
+
 class Event
 
   attr_accessor :name,

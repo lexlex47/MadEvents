@@ -1,8 +1,8 @@
+require_relative "Commands/create_event"
+require_relative "Commands/create_talk"
 require_relative "Commands/create_speaker"
 require_relative "Commands/print_talks"
 require_relative "Commands/error"
-require_relative "Commands/create_event"
-require_relative "Commands/create_talk"
 
 class Command_Controller
 

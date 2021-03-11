@@ -1,6 +1,6 @@
-require_relative "Speaker"
-require_relative "Talk"
 require_relative "Event"
+require_relative "Talk"
+require_relative "Speaker"
 
 class Event_Controller
 
@@ -25,9 +25,8 @@ class Event_Controller
   end
 
   def create_talk(event_name, topic, start_time, end_time, speaker)
-    event = select_event(event_name)
     talk = Talk.new(speaker, start_time, end_time, topic)
-    event.add_talk(talk)
+    select_event(event_name).add_talk(talk)
     puts "Add Talk #{talk.speaker} #{talk.start_time} #{talk.end_time} #{talk.topic}"
   end
 
@@ -38,7 +37,7 @@ class Event_Controller
   private
 
   def select_event(event_name)
-    @events.select{|e| e.name == event_name }
+    @events.detect{|e| e.name == event_name }
   end
 
 end
